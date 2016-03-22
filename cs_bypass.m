@@ -41,7 +41,7 @@ sect_cmd *find_section(sgmt_cmd *seg, const char *name)
     return fs;
 }
 
-struct load_command *find_load_command(mach_hdr *mh, uint32_t cmd)
+load_cmd *find_load_command(mach_hdr *mh, uint32_t cmd)
 {
     load_cmd *lc, *flc;
     lc = (load_cmd *)((uint64_t)mh + sizeof(mach_hdr));
