@@ -90,7 +90,7 @@ void* find_sym(mach_hdr *mh, const char *name) {
     return 0;
 }
 
-vm_address_t find_dyld() {
+vm_address_t find_dyld(void) {
     kern_return_t kr      = KERN_SUCCESS;
     vm_address_t  address = 0;
     vm_size_t     size    = 0;
@@ -148,7 +148,7 @@ mmaphook(void *addr, size_t len, int prot, int flags, int fd, off_t offset)
 }
 
 __attribute__((constructor))
-void ayy_lmao() {
+void ayy_lmao(void) {
     // Load PLT entries (munmap breaks dyld..)
     
     mmap(0, 0, 0, 0, 0, 0);
